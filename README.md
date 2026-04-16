@@ -47,4 +47,3 @@ npm run build
   - `/realms` -> Keycloak (`http://localhost:8080`)
   - `/api` -> Firebuster API (`http://localhost:8000`)
 - Do not commit `.env` (it is gitignored).
-# firebuster-explorer
