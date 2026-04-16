@@ -1,3 +1,5 @@
+IMPORTANT:This client is programmed with maximum vibes(Claude + Codex ). It is made to be used for testing the firebuster api. 
+
 # Firebuster Explorer
 
 A small Vite + TypeScript frontend for testing Firebuster authentication and querying TTF data by coordinates.
