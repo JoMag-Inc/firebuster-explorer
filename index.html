@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firebuster API Test Tool</title>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Firebuster REST API Test Tool</h1>
+      <p id="status" class="status status-idle">Waiting for login</p>
+    </header>
+
+    <section class="card">
+      <h2>Login</h2>
+      <form id="login-form" class="stack">
+        <label>
+          Realm
+          <input id="realm" value="Firebuster" autocomplete="off" />
+        </label>
+        <label>
+          Client ID
+          <input id="client-id" value="firebuster-api" autocomplete="off" />
+        </label>
+        <label>
+          Username
+          <input id="username" value="" placeholder="your-username" autocomplete="username" />
+        </label>
+        <label>
+          Password
+          <input id="password" type="password" value="" placeholder="your-password" autocomplete="current-password" />
+        </label>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Query TTF by Coordinates</h2>
+      <div class="preset-row">
+        <button type="button" data-lat="61.4548" data-lon="5.8572">Use Forde</button>
+        <button type="button" data-lat="60.3913" data-lon="5.3221">Use Bergen</button>
+      </div>
+      <form id="query-form" class="query-grid">
+        <label>
+          Latitude
+          <input id="latitude" value="61.4548" inputmode="decimal" />
+        </label>
+        <label>
+          Longitude
+          <input id="longitude" value="5.8572" inputmode="decimal" />
+        </label>
+        <button type="submit">Run Query</button>
+      </form>
+    </section>
+
+    <section class="card response-card">
+      <h2>Response</h2>
+      <p id="response-summary" class="response-summary">No request made yet.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>TTF (h)</th>
+              <th>Temp (C)</th>
+              <th>Humidity (%)</th>
+              <th>Wind (m/s)</th>
+            </tr>
+          </thead>
+          <tbody id="response-rows"></tbody>
+        </table>
+      </div>
+      <h3>Raw JSON</h3>
+      <pre id="response-raw"></pre>
+    </section>
+  </main>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
